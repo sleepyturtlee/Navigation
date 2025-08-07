@@ -9,15 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
-}
+        //?: Why must a navigation link be in a navigation stack?
+        NavigationStack {
+            VStack {
+                Text("This is the root view")
+                NavigationLink(destination: Text("You've arrived at the second view!")) {
+                    Text("Click me!")
+                }
+            }//end Vstack
+        }//end NavStack
+    }//end body
+}//end struct
 
 #Preview {
     ContentView()
