@@ -12,11 +12,21 @@ struct ContentView: View {
         //?: Why must a navigation link be in a navigation stack?
         NavigationStack {
             VStack {
-                Text("This is the root view")
-                NavigationLink(destination: Text("You've arrived at the second view!")) {
+                Text("This is the root view 🌳😛")
+                    .font(.title)
+                NavigationLink(destination: SecondView()) {
                     Text("Click me!")
+                        .foregroundColor(Color.purple)
+                NavigationLink(destination: Text("You found the secret view!")) {
+                    Text("I want to be clicked too!")
+                        .padding(.all)
+    
+                }
                 }
             }//end Vstack
+            .navigationTitle("Home")
+            .navigationBarTitleDisplayMode(.inline)
+//            .navigationBarHdiden(true)
         }//end NavStack
     }//end body
 }//end struct
